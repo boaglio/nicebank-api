@@ -16,11 +16,19 @@ O sistema espera alguns objetos para funcionar, o script [oracle-setup.sql](doc/
 
 ## Documentação 
 
-A documentação em formato OpenAPI Specification está disponível [em arquivo](doc/api/nicebank-api-docs.json) ou online quando o sistema subir. 
+### API
+
+A documentação em formato *OpenAPI Specification* está disponível [em arquivo](doc/api/nicebank-api-docs.json) ou [online](http://localhost:8080/swagger-ui/index.html) quando o sistema subir. 
+
+### Modelo Entidade Relacionamento
+
+![MER](doc/mer-nicebank.png "MER")
 
 ## Run 
 
-Para executar o sistema localmente, execute:
+Ajuste as configurações de banco de dados de acordo com o seu ambiente, editando o arquivo [application.properties](src/main/resources/application.properties).
+
+Em seguida, para executar o sistema localmente, execute:
 
 ```
 mvn spring-boot:run
