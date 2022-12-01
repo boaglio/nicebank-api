@@ -51,6 +51,6 @@ Em seguida acesse com o navegador: [http://localhost:8000](http://localhost:8000
 Obs: existe um bug no driver da Oracle com docker , se ocorrer o erro  _ORA-01882: timezone region not found_  adicione também a flag: 
 
 ```
--e JAVA_TOOL_OPTIONS= '-Doracle.jdbc.timezoneAsRegion=false'
+-e JAVA_TOOL_OPTIONS='-Doracle.jdbc.timezoneAsRegion=false'
 ```
 
