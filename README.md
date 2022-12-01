@@ -26,7 +26,9 @@ A documentação em formato *OpenAPI Specification* está disponível [em arquiv
 
 ## Run 
 
-Para executar o sistema localmente, execute:
+Ajuste as configurações de banco de dados de acordo com o seu ambiente, editando o arquivo [application.properties](src/main/resources/application.properties).
+
+Em seguida, para executar o sistema localmente, execute:
 
 ```
 mvn spring-boot:run
