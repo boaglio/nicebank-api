@@ -55,7 +55,7 @@ public class BankAccountAPI {
 		BigDecimal newBalance;
 		try {
 			newBalance = bankAccountService.deposit(bankAccountRequest.getUsername(), bankAccountRequest.getAccountId(), bankAccountRequest.getValue());
-			response = new BankAccountResponse("withdraw", bankAccountRequest.getUsername(), bankAccountRequest.getValue(), newBalance.doubleValue());
+			response = new BankAccountResponse("deposit", bankAccountRequest.getUsername(), bankAccountRequest.getValue(), newBalance.doubleValue());
 		} catch (InvalidValueException e) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Invalid value: "+bankAccountRequest.getValue());
 		} catch (UserNotFoundException e) {
