@@ -26,7 +26,7 @@ Para executar o sistema localmente, execute:
 mvn spring-boot:run
 ```
 
-Em seguida acesse com o navegador: [http://localhost:8090](http://localhost:8090)
+Em seguida acesse com o navegador: [http://localhost:8080](http://localhost:8080)
 
 
 ## Build 
