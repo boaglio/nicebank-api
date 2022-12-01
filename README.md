@@ -16,7 +16,13 @@ O sistema espera alguns objetos para funcionar, o script [oracle-setup.sql](doc/
 
 ## Documentação 
 
-A documentação em formato OpenAPI Specification está disponível [em arquivo](doc/api/nicebank-api-docs.json) ou online quando o sistema subir. 
+### API
+
+A documentação em formato *OpenAPI Specification* está disponível [em arquivo](doc/api/nicebank-api-docs.json) ou [online](http://localhost:8080/swagger-ui/index.html) quando o sistema subir. 
+
+### Modelo Entidade Relacionamento
+
+![MER](doc/mer-nicebank.png "MER")
 
 ## Run 
 
