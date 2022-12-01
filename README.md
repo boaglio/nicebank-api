@@ -20,7 +20,7 @@ O sistema espera alguns objetos para funcionar, o script [oracle-setup.sql](doc/
 
 A documentação em formato *OpenAPI Specification* está disponível [em arquivo](doc/api/nicebank-api-docs.json) ou [online](http://localhost:8080/swagger-ui/index.html) quando o sistema subir. 
 
-Para testes das chamadas das APIs temos também [a collection do Postman](doc/api/nicebank api.postman_collection.json).
+Para testes das chamadas das APIs temos também [a collection do Postman](doc/api/nicebankapi.postman_collection.json) .
 
 ### Modelo Entidade Relacionamento
 
