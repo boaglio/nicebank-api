@@ -32,13 +32,13 @@ public class BankAccount {
 		super();
 		this.accountId = accountId;
 		this.userAccount = userAccount;
-		this.balance = BigDecimal.ZERO;;
+		this.balance = BigDecimal.ZERO; 
 	}
 
 	public void withdraw(double withdrawValue) throws NotEnoughBalanceException  {
 		
-		BigDecimal withdrawbd = new BigDecimal(withdrawValue);
-		BigDecimal balanceValidation = new BigDecimal(balance.doubleValue());
+		BigDecimal withdrawbd = BigDecimal.valueOf(withdrawValue);
+		BigDecimal balanceValidation = BigDecimal.valueOf(balance.doubleValue());
 		
 		if (balanceValidation.subtract(withdrawbd).doubleValue() < BALANCE_ACCOUNT_LIMIT)
 			throw new NotEnoughBalanceException();
@@ -48,7 +48,7 @@ public class BankAccount {
 
 	public void deposit(double depositValue)  {
 		
-		BigDecimal depositbd = new BigDecimal(depositValue);
+		BigDecimal depositbd = BigDecimal.valueOf(depositValue);
 		balance = balance.add(depositbd);
 		
 	}

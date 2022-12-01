@@ -75,10 +75,9 @@ public class BankAccountResponse {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((balance == null) ? 0 : balance.hashCode());
+		result = prime * result + ((message == null) ? 0 : message.hashCode());
 		result = prime * result + ((operation == null) ? 0 : operation.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
 		return result;
 	}
 
@@ -91,10 +90,10 @@ public class BankAccountResponse {
 		if (getClass() != obj.getClass())
 			return false;
 		BankAccountResponse other = (BankAccountResponse) obj;
-		if (balance == null) {
-			if (other.balance != null)
+		if (message == null) {
+			if (other.message != null)
 				return false;
-		} else if (!balance.equals(other.balance))
+		} else if (!message.equals(other.message))
 			return false;
 		if (operation == null) {
 			if (other.operation != null)
@@ -106,13 +105,9 @@ public class BankAccountResponse {
 				return false;
 		} else if (!username.equals(other.username))
 			return false;
-		if (value == null) {
-			if (other.value != null)
-				return false;
-		} else if (!value.equals(other.value))
-			return false;
 		return true;
 	}
+
 
 	@Override
 	public String toString() {

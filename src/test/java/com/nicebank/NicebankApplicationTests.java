@@ -33,7 +33,7 @@ class NicebankApplicationTests {
 	}
 	
 	@Test
-	public void testDeposit() throws Exception {
+	void testDeposit() throws Exception {
 		
 		this.mvc.perform(
 			 post(URI_DEPOSIT)
@@ -43,7 +43,7 @@ class NicebankApplicationTests {
 	}
 	
 	@Test
-	public void testWithdraw() throws Exception {
+	void testWithdraw() throws Exception {
  
 		this.mvc.perform(
 				 post(URI_WITHDRAW)
@@ -53,7 +53,7 @@ class NicebankApplicationTests {
 	}
 	
 	@Test
-	public void testWithdrawNoEnoughBalance() throws Exception {
+	void testWithdrawNoEnoughBalance() throws Exception {
  
 		this.mvc.perform(
 			 post(URI_WITHDRAW)
@@ -63,7 +63,7 @@ class NicebankApplicationTests {
 	}
 	
 	@Test
-	public void testWithdrawUserNotFound() throws Exception {
+	void testWithdrawUserNotFound() throws Exception {
  
 		this.mvc.perform(
 			 post(URI_WITHDRAW)
@@ -73,7 +73,7 @@ class NicebankApplicationTests {
 	}
 	
 	@Test
-	public void testWithdrawBankAccountNotFound() throws Exception {
+	void testWithdrawBankAccountNotFound() throws Exception {
  
 		this.mvc.perform(
 			 post(URI_WITHDRAW)

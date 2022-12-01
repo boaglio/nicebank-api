@@ -25,7 +25,7 @@ import com.nicebank.repository.UserAccountRepository;
  
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class BankAccountServiceTest {
+class BankAccountServiceTest {
 
 	@Autowired
 	BankAccountService  service;
@@ -45,7 +45,7 @@ public class BankAccountServiceTest {
 	BankAccount ba3 = new BankAccount(50003l,ua3);
 	
 	@BeforeEach
-	public void setupAccounts() {
+	void setupAccounts() {
 				
 		Optional<UserAccount> findUA1 = userAccountRepository.findById(ua1.getId());
 		if (findUA1.isEmpty()) userAccountRepository.save(ua1);
@@ -68,7 +68,7 @@ public class BankAccountServiceTest {
 	}
 
 	@Test 
-	public void testUnknownUserAccount() throws Exception {
+	void testUnknownUserAccount() throws Exception {
 	
 		Exception exception = assertThrows(UserNotFoundException.class, () ->
 		service.withdraw("Unknown User Account", ba1.getAccountId(), 100l));
@@ -78,7 +78,7 @@ public class BankAccountServiceTest {
 	}
  
 	@Test 
-	public void testUnknownBankAccount() throws Exception {
+	void testUnknownBankAccount() throws Exception {
 	
 		Exception exception = assertThrows(AccountNotFoundException.class, () ->
 		service.withdraw(ua1.getName(), 999999l, 100l));
@@ -89,7 +89,7 @@ public class BankAccountServiceTest {
 	
 	 
 	@Test 
-	public void testNotEnoughBalance() throws Exception {
+	void testNotEnoughBalance() throws Exception {
 		
 		Exception exception = assertThrows(NotEnoughBalanceException.class, () ->
 		service.withdraw(ua1.getName(),  ba1.getAccountId() , 1000000l));
@@ -99,19 +99,19 @@ public class BankAccountServiceTest {
 	}
 	
 	@Test 
-	public void testDeposit() throws  Exception {
+	void testDeposit() throws  Exception {
 		
 		BigDecimal balance1 = service.deposit(ua1.getName(), ba1.getAccountId(), 100l);
 		BigDecimal balance2 = service.deposit(ua2.getName(), ba2.getAccountId(), 100l);
 		BigDecimal balance3 = service.deposit(ua3.getName(), ba3.getAccountId(), 100l);
 		
-		assertThat(balance1.doubleValue()).isGreaterThan(0L);
-		assertThat(balance2.doubleValue()).isGreaterThan(0L);
-		assertThat(balance3.doubleValue()).isGreaterThan(0L);
+		assertThat(balance1.doubleValue()).isPositive();
+		assertThat(balance2.doubleValue()).isPositive();
+		assertThat(balance3.doubleValue()).isPositive();
 	}
 
 	@Test 
-	public void testWithdraw() throws Exception {
+	void testWithdraw() throws Exception {
 		
 		long withdrawValue = 20l;
 		Optional<BankAccount> ba1Stored = bankAccountRepository.findById(ba1.getAccountId());
@@ -122,7 +122,7 @@ public class BankAccountServiceTest {
 	}
 
 	@Test 
-	public void testWithdrawMoreThanExistingBalance() throws Exception {
+	void testWithdrawMoreThanExistingBalance() throws Exception {
 		
 		Optional<BankAccount> ba2Stored = bankAccountRepository.findById(ba2.getAccountId());
  
@@ -135,7 +135,7 @@ public class BankAccountServiceTest {
 	}
 	
 	@Test 
-	public void testDepositWithInvalidValue() throws Exception {
+	void testDepositWithInvalidValue() throws Exception {
 		
 		Exception exception = assertThrows(InvalidValueException.class, () ->
 		service.deposit(ua1.getName(), ba1.getAccountId(), -100l));
